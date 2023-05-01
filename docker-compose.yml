@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  myapp_order:
+    image: docker.io/bitnami/laravel:10
+    ports:
+      - '1337:8000'
+    environment:
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/app/database/db
+      - DB_FOREIGN_KEYS=true
+    volumes:
+      - './my-project:/app'
+ 
+
