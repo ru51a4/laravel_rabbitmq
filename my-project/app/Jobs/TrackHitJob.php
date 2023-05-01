@@ -19,8 +19,10 @@ class TrackHitJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
+    public $str = "";
+    public function __construct(string $_str)
     {
+        $this->str = $_str;
     }
 
     /**
@@ -30,7 +32,7 @@ class TrackHitJob implements ShouldQueue
      */
     public function handle()
     {
-        Log::info('User {id} failed to login.', ['id' => "asd"]);
+        Log::info('{str}', ['str' => $this->str]);
         return 1;
     }
 }
